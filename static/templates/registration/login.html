@@ -1,0 +1,8 @@
+{% extends 'registration/base.html' %} {% block title %}Login{% endblock %} {% block content %}
+<form method="POST" class="post-form">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Login</button>
+    <a class="btn btn-primary button-margin" role="button" href="{% url 'register' %}">Register</a>
+    <a class="btn btn-primary button-margin" href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+</form>
+{% endblock %}
